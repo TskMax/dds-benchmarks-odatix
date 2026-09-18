@@ -1,4 +1,4 @@
-# dds-pac-benchmarks-odatix
+# dds-benchmarks-odatix
 
 Hardware implementations for ASIC and FPGA benchmarking of non-iterative Direct Digital Synthesizer (DDS) Phase-to-Amplitude Converter (PAC) architectures in Chisel, automated using ODATIX.
 
