@@ -20,8 +20,8 @@ Design-space exploration and hardware metrics (logic area, dynamic power, and ma
 
 ## Prerequisites and Toolchain
 * **Hardware Description:** Scala 2.13.18, Chisel 7.7.0.
-* **Build Systems:** SBT or Mill.
-* **ASIC Flow:** TSMC 28nm HPC+ CMOS standard-cell library.
+* **Build Systems:** SBT.
+* **ASIC Flow:** Synopsys Design Compiler, TSMC 28nm HPC+ CMOS standard-cell library. 
 * **FPGA Flow:** AMD Xilinx Vivado.
 * **Automation:** ODATIX environment for batch synthesis and metric extraction.
 
