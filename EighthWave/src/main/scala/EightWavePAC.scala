@@ -65,13 +65,12 @@ class EightWavePAC(val config: DdsConfig) extends Module {
   io.ampOut := RegNext(Mux(signBitReg, -romData, romData))
   }
 
-// Objet principal pour générer le Verilog
 object GenerateEightWavePAC extends App {
-  // On va chercher la meme configuration
+
   val myConfig = DdsConfigs.activeConfig
 
   _root_.circt.stage.ChiselStage.emitSystemVerilogFile(
-    // On utilise les largeurs definies dans le catalogue
+
     new EightWavePAC(myConfig),
     Array("--target-dir", "sortie_verilog")
   )

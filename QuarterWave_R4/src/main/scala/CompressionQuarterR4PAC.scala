@@ -27,10 +27,6 @@ class CompressionQuarterR4PAC(val config: DdsConfig) extends Module {
   val sinSignReg1 = RegNext(sinSign)
   val cosSignReg1 = RegNext(cosSign)
 
-  // ==========================================
-  // DECOUPAGE PERSONNALISE DES ROMS
-  // ==========================================
-  // Verifications de securite a l'elaboration Chisel
   val partitions = config.romPartitions
   require(partitions.length == 4, "L'architecture R4 necessite exactement 4 tailles de partition dans DdsConfig.")
   require(partitions.sum == addrWidth, s"Erreur: La somme des partitions (${partitions.sum}) doit valoir addrWidth ($addrWidth).")
@@ -50,14 +46,11 @@ class CompressionQuarterR4PAC(val config: DdsConfig) extends Module {
 
   val tableMax = (1 << addrWidth).toDouble
 
-  // ==========================================
-  // BITS DE GARDE DANS LES ROMS
-  // ==========================================
   val guardBits = 0                                         // On rajoute 3 bits fractionnaires supplémentaires pour garder de la précision dans les calcules internes. 
   val romAmpWidth = ampWidth + guardBits                    // 12 + 3 = 15 bits > 12 bits donc on aura plus de précision. On tronquera le résultats final pour avoir les 12 bits. 
   val romMaxAmp = ((1 << (romAmpWidth - 1)) - 1).toDouble 
 
-  def makeTable(depthBits: Int, shift: Int, addHalfLsb: Boolean) = {  // depthBits correspond ici à W1,W2, etc..  shift à sh1, sh2, etc...
+  def makeTable(depthBits: Int, shift: Int, addHalfLsb: Boolean) = { 
     val depth = 1 << depthBits
     val cosT = VecInit(Seq.tabulate(depth) { i =>
       val offset = if (addHalfLsb) 0.5 else 0.0

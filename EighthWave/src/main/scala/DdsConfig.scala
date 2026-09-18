@@ -15,7 +15,7 @@ object DdsConfig {
     new DdsConfig(accumWidth, accumWidth, ampWidth, fcw, numSamples, fileName)
 }
 
-// 2. Le "catalogue" de tes configurations de test
+
 object DdsConfigs {
 
     
@@ -26,9 +26,7 @@ object DdsConfigs {
     numSamples = 2048,
     fileName = "dds_output_odatix.txt"
   )
-  
-  
-  // Ta configuration actuelle (16 bits, 65536 echantillons)
+
   val configDeBase = DdsConfig(
     accumWidth = 16,
     phaseOutWidth = 12,
@@ -38,8 +36,7 @@ object DdsConfigs {
     fileName = "dds_output_base.txt"
   )
 
-  // Une autre configuration pour tester une tres haute precision plus tard
-  val configHauteResolution = DdsConfig( //permet d'avoir le meme f_out que la config de base ! 
+  val configHauteResolution = DdsConfig(
     accumWidth = 32,
     phaseOutWidth = 14,
     ampWidth = 14,
@@ -52,7 +49,7 @@ object DdsConfigs {
     accumWidth = 14,
     phaseOutWidth = 14,
     ampWidth = 12,
-    fcw = 164, // Pas de fréquence peu précis : 100 MHz / 2^14 = 6103 Hz, donc on choisit une valeur de FCW qui correspond à une fréquence d'environ 1 MHz.
+    fcw = 164,
     numSamples = 1024,
     fileName = "dds_output_neutre.txt"
   )

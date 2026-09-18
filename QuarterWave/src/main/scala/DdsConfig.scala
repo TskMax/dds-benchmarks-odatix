@@ -52,7 +52,7 @@ object DdsConfigs {
     accumWidth = 14,
     phaseOutWidth = 14,
     ampWidth = 12,
-    fcw = 164, // Pas de fréquence peu précis : 100 MHz / 2^14 = 6103 Hz, donc on choisit une valeur de FCW qui correspond à une fréquence d'environ 1 MHz.
+    fcw = 164, 
     numSamples = 1024,
     fileName = "dds_output_neutre.txt"
   )

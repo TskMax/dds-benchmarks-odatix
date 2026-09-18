@@ -1,23 +1,22 @@
 import chisel3._
 
-// 1. La classe qui definit quels sont les parametres modifiables
 case class DdsConfig(
   accumWidth: Int,         
   phaseOutWidth: Int,      
   ampWidth: Int,           
-  lsbWidth: Int,           // NOUVEAU : Nombre de bits pour la table LSB (theta_2)
+  lsbWidth: Int,           
   fcw: Int,                
   numSamples: Int,         
   fileName: String         
 )
 
 object DdsConfig {
-  // Mise à jour de la fonction apply pour supporter le nouveau paramètre
+
   def apply(accumWidth: Int, ampWidth: Int, lsbWidth: Int, fcw: Int, numSamples: Int, fileName: String): DdsConfig =
     new DdsConfig(accumWidth, accumWidth, ampWidth, lsbWidth, fcw, numSamples, fileName)
 }
 
-// 2. Le "catalogue" de tes configurations de test
+
 object DdsConfigs {
     
   val configOdatix = DdsConfig(
@@ -33,7 +32,7 @@ object DdsConfigs {
     accumWidth = 16,
     phaseOutWidth = 12,
     ampWidth = 12,
-    lsbWidth = 5,       // Sur 12 bits de phase, il reste 10 bits d'adresse (ex: 5 LSB, 5 MSB)
+    lsbWidth = 5,     
     fcw = 655,
     numSamples = 131072,
     fileName = "dds_output_base.txt"
@@ -43,7 +42,7 @@ object DdsConfigs {
     accumWidth = 32,
     phaseOutWidth = 14,
     ampWidth = 14,
-    lsbWidth = 6,       // 14-2 = 12 bits d'adresse -> 6 MSB et 6 LSB
+    lsbWidth = 6,     
     fcw = 42949672,
     numSamples = 65536,
     fileName = "dds_output_hires.txt"

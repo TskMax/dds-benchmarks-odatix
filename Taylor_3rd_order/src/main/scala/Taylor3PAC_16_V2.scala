@@ -1,6 +1,3 @@
-// La seule modif par rapport à l'archi de la publi sont les opérande +& et -& qui font monter à 2à bits lignes 118 et 119. Cependant la figure ne précise pas la taille du bus à cet endroit donc oklm
-
-
 import chisel3._
 import chisel3.util._
 
@@ -20,11 +17,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val qwBit   = io.control(1) 
   val ewBit   = io.control(0) 
 
-  // =====================================================================
-  // STAGE 0 : ADAPTATION AU PHASE ACCUMULATOR
-  // =====================================================================
-  // Le PA fournit io.phaseIn DEJA multiplie par pi/4 (valeur max = ~205887).
-  // La constante pi/4 normalisee sur 18 bits :
+
   val pi_over_4_rad = Math.round((Math.PI / 4.0) * (1L << phaseWidth)).U(phaseWidth.W)
   
   // Reflexion de l'octant appliquee sur le signal en radians purs
@@ -36,9 +29,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val isCosEqReg1 = RegNext(qwBit ^ ewBit)
 
 
-  // =====================================================================
-  // GENERATION DE LA LUT (TOUT EST CALCULE PAR LE PC)
-  // =====================================================================
+
   val B = phaseWidth - segAddrWidth   // 18 - 2 = 16
   val segmentAddr = pac_input_rad(phaseWidth - 1, B)   // Extraction des bits d adressage de segments 
   val numSegments = 1 << segAddrWidth    // = 4
@@ -63,7 +54,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   })
 
 
-  // On récupère les valeurs de x0, cos(x0) et sin(x0) pour le segment courant 
+
   val x0_reg     = RegNext(evalPointTable(segmentAddr))           
   val cos_x0_reg = RegNext(cosTable(segmentAddr))
   val sin_x0_reg = RegNext(sinTable(segmentAddr))
@@ -74,7 +65,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val cosSignReg2 = RegNext(cosSignReg1)
   val isCosEqReg2 = RegNext(isCosEqReg1)
 
-  // -- Soustracteur (dx) --
+
   val dx_full = phase_rad_delayed.zext - x0_reg.zext      // dx = x - x0, on utillise .zext pour ajouter un bit de poids fort et passer en signé
   val dx = RegNext(dx_full(17, 0).asSInt)                 // On peut remmetre sur 18 bits car dx est toujours compris entre -2^17 et 2^17 (car x0 est centré dans le segment)
 
@@ -86,7 +77,6 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val isCosEqReg3 = RegNext(isCosEqReg2)
 
 
-  // -- Multiplicateurs Stage 1 & Quadratique brut --
   val m_cos_s4 = RegNext((dx * cos_x0_s3) >> 1)     // dx * cos(x0) : 35 bits (18+18-1=35)
   val m_sin_s4 = RegNext((dx * sin_x0_s3) >> 1)     // dx * sin(x0) : 35 bits
 
@@ -103,7 +93,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val isCosEqReg4 = RegNext(isCosEqReg3)
 
 
-  // -- Multiplicateurs Stage 2 (Terme Quadratique sur 35 bits) --
+
   // dx_sq (23b) * sin_x0 (18b)/2! = 41 bits. 
   // 41 bits >> 7 = 34 bits. On utilise .pad(35.W) pour atteindre 35 bits.
   val m2_sin_s5 = RegNext(((dx_sq_s4 * sin_x0_s4) >> 7).pad(35))    
@@ -122,7 +112,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val cosSignReg5 = RegNext(cosSignReg4)
   val isCosEqReg5 = RegNext(isCosEqReg4)
 
-  // -- Additions Finales --
+
   // sin(x0) + cos(x0)*dx - sin(x0)*(dx^2)/2!
   // cos(x0) - sin(x0)*dx - cos(x0)*(dx^2)/2!
   val sin_taylor_35 = RegNext(sin_x0_s5 +& m_cos_s5 -& m2_sin_s5)   // 37 bits (35+2) pour éviter l'overflow
@@ -133,7 +123,7 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val isCosEqReg6 = RegNext(isCosEqReg5)
 
 
-  // Troncature à 16 bits juste avant les multiplexeurs de sortie. 
+
   // 35 - 19 = 16 bits. 
   val shift_to_16 = 19
   val round_bit_16 = (1 << (shift_to_16 - 1)).S
@@ -143,11 +133,6 @@ class Taylor3PAC_16_V2(val config: DdsConfig) extends Module {
   val cos_16b_raw = (cos_taylor_35 + round_bit_16) >> shift_to_16     // 37 - 19 = 18 bits, on garde les 2 bits de garde pour l'overflow
 
 
-
-
-  // =====================================================================
-  // SINE AND COSINE SYMMETRY LOGIC
-  // =====================================================================
   val targetAmpWidth = 16               
   
   val max_amp = ((1 << (targetAmpWidth - 1)) - 1).S 

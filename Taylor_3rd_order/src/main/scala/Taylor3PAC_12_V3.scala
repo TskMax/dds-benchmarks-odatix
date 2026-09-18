@@ -58,7 +58,7 @@ class Taylor3PAC_12_V3(val config: DdsConfig) extends Module {
   val cosSignReg2 = RegNext(cosSignReg1)
   val isCosEqReg2 = RegNext(isCosEqReg1)
 
-  // -- Soustracteur (dx) --
+
   val dx_full = phase_rad_delayed.zext - x0_reg.zext      
   val dx = RegNext(dx_full(17, 0).asSInt)                 
 

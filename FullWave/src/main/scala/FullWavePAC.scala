@@ -39,7 +39,7 @@ class FullWavePAC(val config: DdsConfig) extends Module {
   io.sinOut := RegNext(sineTable(addressReg))
 }
 
-// Objet principal pour generer le Verilog
+
 object GenerateFullPAC extends App {
   val myConfig = DdsConfigs.activeConfig
 

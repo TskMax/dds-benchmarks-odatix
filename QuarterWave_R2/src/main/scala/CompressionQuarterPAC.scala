@@ -19,7 +19,6 @@ class CompressionQuarterPAC(val config: DdsConfig) extends Module {
 
   val addrWidth  = phaseWidth - 2
   
-  // SÉCURITÉ : Vérifie que le paramètre envoyé par Odatix est physiquement possible
   require(config.lsbWidth > 0 && config.lsbWidth < addrWidth, 
     s"lsbWidth (${config.lsbWidth}) doit etre superieur a 0 et inferieur a addrWidth ($addrWidth)")
 

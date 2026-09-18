@@ -9,7 +9,7 @@ class Taylor2PAC_18_V2(val config: DdsConfig) extends Module {
     val sinOut  = Output(SInt(16.W))
   })
 
-  // 32 segments (segAddrWidth = 5) recommandés pour maintenir un bon SFDR au 2ème ordre
+ 
 
   val segAddrWidth = 5 ;  val romAmpWidth = 18 ;   val phaseWidth = 18
  
@@ -59,7 +59,7 @@ class Taylor2PAC_18_V2(val config: DdsConfig) extends Module {
   val cosSignReg2 = RegNext(cosSignReg1)
   val isCosEqReg2 = RegNext(isCosEqReg1)
 
-  // -- Soustracteur Central (18 bits) --
+
   // dx = x - x0
   val dx_full = phase_rad_delayed.zext - x0_reg.zext
   val dx = RegNext(dx_full(17, 0).asSInt)
@@ -71,7 +71,6 @@ class Taylor2PAC_18_V2(val config: DdsConfig) extends Module {
   val cosSignReg3 = RegNext(cosSignReg2)
   val isCosEqReg3 = RegNext(isCosEqReg2)
 
-  // -- Les registres pipeline manquants pour aligner les signaux de contrôle --
   val sinSignReg4 = RegNext(sinSignReg3)
   val cosSignReg4 = RegNext(cosSignReg3)
   val isCosEqReg4 = RegNext(isCosEqReg3)
@@ -86,16 +85,15 @@ class Taylor2PAC_18_V2(val config: DdsConfig) extends Module {
   /*val m_cos_32 = RegNext(p_cos(35, 4).asSInt) // 32 bits
   val m_sin_32 = RegNext(p_sin(35, 4).asSInt) // 32 bits */
 
-  // Injection d'un demi-LSB (2^3 = 8) pour un arrondi symétrique parfait
+  //  (2^3 = 8) 
   val m_cos_32 = RegNext(((p_cos + 8.S)(35, 4)).asSInt) 
   val m_sin_32 = RegNext(((p_sin + 8.S)(35, 4)).asSInt)
 
- // -- Alignement ROM sur 32 bits --
   // 18 bits natifs + 13 bits de decalage = 31 bits, etendu a 32 bits
   val sin_x0_aligned = RegNext(sin_x0_s3 << 14) // 32 bits     
   val cos_x0_aligned = RegNext(cos_x0_s3 << 14) // 32 bits
 
-  // -- Additionneurs centraux (32 bits + 32 bits -> 32 bits) --
+  //(32 bits + 32 bits -> 32 bits) 
   val sin_sum = RegNext(sin_x0_aligned.pad(34) + m_cos_32.pad(34))      // 32 bits   
   val cos_sum = RegNext(cos_x0_aligned.pad(34) - m_sin_32.pad(34))      // 32 bits   
   
@@ -107,22 +105,22 @@ class Taylor2PAC_18_V2(val config: DdsConfig) extends Module {
   val sin_shifted = (sin_sum + round_bit) >> shift_to_16   // 32 - 15 = 17 bits
   val cos_shifted = (cos_sum + round_bit) >> shift_to_16   
 
-  // -- Saturation stricte sur 16 bits --
+ 
   val targetAmpWidth = 16               
   val max_amp = ((1 << (targetAmpWidth - 1)) - 1).S 
   val min_amp = 0.S
 
-  // Cast .asSInt forcé pour la compatibilité du Mux
+ 
   val sin_sat = Mux(sin_shifted > max_amp, max_amp, 
                   Mux(sin_shifted < min_amp, min_amp, sin_shifted))
   val cos_sat = Mux(cos_shifted > max_amp, max_amp, 
                   Mux(cos_shifted < min_amp, min_amp, cos_shifted))
 
-  // Extraction finale propre des 16 bits de poids faible
+
   val pac_sin_out_final = sin_sat(15, 0).asSInt   
   val pac_cos_out_final = cos_sat(15, 0).asSInt
 
-  // -- Swap et Signe (Inchangé) --
+ 
   val preSignCos = Mux(isCosEqReg5, pac_sin_out_final, pac_cos_out_final)
   val preSignSin = Mux(isCosEqReg5, pac_cos_out_final, pac_sin_out_final)
 

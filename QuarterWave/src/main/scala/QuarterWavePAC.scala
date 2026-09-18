@@ -62,7 +62,6 @@ class QuarterWavePAC(val config: DdsConfig) extends Module {
   io.cosOut := RegNext(Mux(cosSignReg, -cosData, cosData))
 }
 
-// Objet principal pour générer le Verilog
 object GenerateQuarterPAC extends App {
   val myConfig = DdsConfigs.activeConfig
 

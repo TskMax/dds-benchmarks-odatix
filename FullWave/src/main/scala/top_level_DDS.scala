@@ -20,14 +20,13 @@ class top_level_DDS(val config: DdsConfig) extends Module {
 }
 
 
-//Rajouté...
-// Objet principal pour generer le SystemVerilog du systeme complet
+
 object GenerateTopDDS extends App {
   
-  // On charge la configuration depuis le fichier central
+
   val myConfig = DdsConfigs.activeConfig
 
-  // Generation du fichier top_level_DDS.sv dans le dossier sortie_verilog
+s
   _root_.circt.stage.ChiselStage.emitSystemVerilogFile(
     new top_level_DDS(myConfig),
     Array("--target-dir", "sortie_verilog")

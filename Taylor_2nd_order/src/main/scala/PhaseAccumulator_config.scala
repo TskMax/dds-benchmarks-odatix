@@ -30,21 +30,13 @@ class PhaseAccumulator_config(val config: DdsConfig) extends Module {
   
   val shiftAmount = (2 * W) - phaseOutW
 
-/*
-  // Creation de l'offset de 0.5 LSB en allumant le bit fractionnaire juste en dessous
-  val half_lsb_offset = (1L << (shiftAmount - 1)).U
-  
-  // Ajout de l'offset au resultat de la multiplication
-  val multResult_offset = multResult + half_lsb_offset
 
-*/
 
 
   io.phase_tronq := multResult(shiftAmount + phaseOutW - 1, shiftAmount)
   //io.phase_tronq := multResult_offset(shiftAmount + phaseOutW - 1, shiftAmount)
 }
 
-// Objet principal pour generer le composant individuel
 object PhaseAccumulator_config extends App {
   val myConfig = DdsConfigs.activeConfig
 
