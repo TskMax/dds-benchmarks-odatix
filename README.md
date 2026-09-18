@@ -29,5 +29,5 @@ Design-space exploration and hardware metrics (logic area, dynamic power, and ma
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/TskMax/dds-pac-benchmarks-odatix.git](https://github.com/TskMax/dds-pac-benchmarks-odatix.git)
-cd dds-pac-benchmarks-odatix
+git clone [https://github.com/TskMax/dds-benchmarks-odatix.git](https://github.com/TskMax/dds-benchmarks-odatix.git)
+cd dds-benchmarks-odatix
