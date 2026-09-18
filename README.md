@@ -1,4 +1,4 @@
-# dds-pac-benchmarks-odatix
+# dds-benchmarks-odatix
 
 Hardware implementations for ASIC and FPGA benchmarking of non-iterative Direct Digital Synthesizer (DDS) Phase-to-Amplitude Converter (PAC) architectures in Chisel, automated using ODATIX.
 
@@ -29,5 +29,5 @@ Design-space exploration and hardware metrics (logic area, dynamic power, and ma
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/TskMax/dds-pac-benchmarks-odatix.git](https://github.com/TskMax/dds-pac-benchmarks-odatix.git)
-cd dds-pac-benchmarks-odatix
+git clone [https://github.com/TskMax/dds-benchmarks-odatix.git](https://github.com/TskMax/dds-benchmarks-odatix.git)
+cd dds-benchmarks-odatix
