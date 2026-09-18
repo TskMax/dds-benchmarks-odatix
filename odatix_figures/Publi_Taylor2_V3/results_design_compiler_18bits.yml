@@ -1,0 +1,100 @@
+units:
+  Fmax: MHz
+  Cell_Area: um^2
+  Comb_Area: um^2
+  Noncomb_Area: um^2
+  Buf_Inv_Area: um^2
+  Macro_Area: um^2
+  Internal_Power: mW
+  Switching_Power: mW
+  Leakage_Power: pW
+  Total_Power: mW
+fmax_synthesis:
+  TSMC_N28_HPCplus_P140_12T_0V9:
+    Taylor2_18bits_V2:
+      16seg:
+        Fmax: 748
+        Cell_Area: 8987.832
+        Total_Area: null
+        Comb_Area: 8056.104
+        Noncomb_Area: 931.728
+        Buf_Inv_Area: 283.248
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 5216
+        Internal_Power: 3.5969
+        Switching_Power: 1.1071
+        Leakage_Power: 5087400.0
+        Total_Power: 9.7914
+        Param_Domains:
+          __main__: 16seg
+          __timestamp__: 2026-09-01_17-25-38
+      2seg:
+        Fmax: 781
+        Cell_Area: 6162.744
+        Total_Area: null
+        Comb_Area: 5485.368
+        Noncomb_Area: 677.376
+        Buf_Inv_Area: 218.4
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3720
+        Internal_Power: 2.593
+        Switching_Power: 0.811
+        Leakage_Power: 3169600.0
+        Total_Power: 6.5736
+        Param_Domains:
+          __main__: 2seg
+          __timestamp__: 2026-09-01_17-25-38
+      32seg:
+        Fmax: 741
+        Cell_Area: 8930.04
+        Total_Area: null
+        Comb_Area: 8017.8
+        Noncomb_Area: 912.24
+        Buf_Inv_Area: 274.848
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 5301
+        Internal_Power: 3.5876
+        Switching_Power: 1.1435
+        Leakage_Power: 4967800.0
+        Total_Power: 9.6988
+        Param_Domains:
+          __main__: 32seg
+          __timestamp__: 2026-09-01_17-25-38
+      4seg:
+        Fmax: 755
+        Cell_Area: 8413.104
+        Total_Area: null
+        Comb_Area: 7557.312
+        Noncomb_Area: 855.792
+        Buf_Inv_Area: 225.288
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 4827
+        Internal_Power: 3.2949
+        Switching_Power: 1.009
+        Leakage_Power: 4730700.0
+        Total_Power: 9.0346
+        Param_Domains:
+          __main__: 4seg
+          __timestamp__: 2026-09-01_17-25-38
+      8seg:
+        Fmax: 744
+        Cell_Area: 9090.48
+        Total_Area: null
+        Comb_Area: 8167.656
+        Noncomb_Area: 922.824
+        Buf_Inv_Area: 263.256
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 5220
+        Internal_Power: 3.661
+        Switching_Power: 1.1109
+        Leakage_Power: 5147100.0
+        Total_Power: 9.919
+        Param_Domains:
+          __main__: 8seg
+          __timestamp__: 2026-09-01_17-25-38
+custom_freq_synthesis: {}

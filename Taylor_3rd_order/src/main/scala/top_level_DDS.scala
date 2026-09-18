@@ -1,0 +1,31 @@
+import chisel3._
+
+class top_level_DDS(val config: DdsConfig) extends Module {
+  val io = IO(new Bundle {
+    val increment = Input(UInt(config.accumWidth.W))
+    
+    val cosOut    = Output(SInt(config.ampWidth.W))
+    val sinOut    = Output(SInt(config.ampWidth.W))
+  })
+
+  val accumulator = Module(new PhaseAccumulator_config(config))
+  val pac         = Module(new Taylor3PAC_16_V2(config))
+
+  accumulator.io.fcw       := io.increment       // Entrée externe vers accumulateur
+  pac.io.phaseIn           := accumulator.io.phase_tronq // Accumulateur vers PAC
+  pac.io.control           := accumulator.io.control 
+  io.cosOut                := pac.io.cosOut                  
+  io.sinOut                := pac.io.sinOut                  
+}
+
+
+object GenerateTopDDS extends App {
+  
+  
+  val myConfig = DdsConfigs.activeConfig
+
+  _root_.circt.stage.ChiselStage.emitSystemVerilogFile(
+    new top_level_DDS(myConfig),
+    Array("--target-dir", "sortie_verilog")
+  )
+}

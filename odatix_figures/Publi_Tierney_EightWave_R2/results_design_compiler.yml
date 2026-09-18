@@ -1,0 +1,168 @@
+units:
+  Fmax: MHz
+  Cell_Area: um^2
+  Comb_Area: um^2
+  Noncomb_Area: um^2
+  Buf_Inv_Area: um^2
+  Macro_Area: um^2
+  Internal_Power: mW
+  Switching_Power: mW
+  Leakage_Power: pW
+  Total_Power: mW
+fmax_synthesis:
+  TSMC_N28_HPCplus_P140_12T_0V9:
+    R2EightWave:
+      10lsb:
+        Fmax: 1491
+        Cell_Area: 4543.224
+        Total_Area: null
+        Comb_Area: 3923.808
+        Noncomb_Area: 619.416
+        Buf_Inv_Area: 260.232
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3258
+        Internal_Power: 2.4792
+        Switching_Power: 0.5319
+        Leakage_Power: 2201400.0
+        Total_Power: 5.2126
+        Param_Domains:
+          __main__: 10lsb
+          __timestamp__: 2026-06-15_14-48-15
+      11lsb:
+        Fmax: 1431
+        Cell_Area: 4614.624
+        Total_Area: null
+        Comb_Area: 4032.504
+        Noncomb_Area: 582.12
+        Buf_Inv_Area: 224.784
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3616
+        Internal_Power: 2.2366
+        Switching_Power: 0.4993
+        Leakage_Power: 2150800.0
+        Total_Power: 4.8868
+        Param_Domains:
+          __main__: 11lsb
+          __timestamp__: 2026-06-15_14-48-15
+      3lsb:
+        Fmax: 1533
+        Cell_Area: 3031.896
+        Total_Area: null
+        Comb_Area: 2620.128
+        Noncomb_Area: 411.768
+        Buf_Inv_Area: 189.504
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2523
+        Internal_Power: 1.8052
+        Switching_Power: 0.5024
+        Leakage_Power: 1352800.0
+        Total_Power: 3.6604
+        Param_Domains:
+          __main__: 3lsb
+          __timestamp__: 2026-06-15_14-48-15
+      4lsb:
+        Fmax: 1568
+        Cell_Area: 3347.4
+        Total_Area: null
+        Comb_Area: 2851.968
+        Noncomb_Area: 495.432
+        Buf_Inv_Area: 182.112
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2548
+        Internal_Power: 2.1142
+        Switching_Power: 0.5019
+        Leakage_Power: 1601100.0
+        Total_Power: 4.2173
+        Param_Domains:
+          __main__: 4lsb
+          __timestamp__: 2026-06-15_14-48-15
+      5lsb:
+        Fmax: 1531
+        Cell_Area: 3114.72
+        Total_Area: null
+        Comb_Area: 2592.408
+        Noncomb_Area: 522.312
+        Buf_Inv_Area: 165.984
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2370
+        Internal_Power: 2.0376
+        Switching_Power: 0.4424
+        Leakage_Power: 1444600.0
+        Total_Power: 3.9247
+        Param_Domains:
+          __main__: 5lsb
+          __timestamp__: 2026-06-15_14-48-15
+      6lsb:
+        Fmax: 1512
+        Cell_Area: 3140.424
+        Total_Area: null
+        Comb_Area: 2628.696
+        Noncomb_Area: 511.728
+        Buf_Inv_Area: 173.712
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2339
+        Internal_Power: 1.9668
+        Switching_Power: 0.4184
+        Leakage_Power: 1494800.0
+        Total_Power: 3.8799
+        Param_Domains:
+          __main__: 6lsb
+          __timestamp__: 2026-06-15_14-48-15
+      7lsb:
+        Fmax: 1531
+        Cell_Area: 3373.272
+        Total_Area: null
+        Comb_Area: 2842.392
+        Noncomb_Area: 530.88
+        Buf_Inv_Area: 207.48
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2399
+        Internal_Power: 2.1432
+        Switching_Power: 0.4489
+        Leakage_Power: 1641900.0
+        Total_Power: 4.234
+        Param_Domains:
+          __main__: 7lsb
+          __timestamp__: 2026-06-15_14-48-15
+      8lsb:
+        Fmax: 1449
+        Cell_Area: 3472.728
+        Total_Area: null
+        Comb_Area: 2988.216
+        Noncomb_Area: 484.512
+        Buf_Inv_Area: 163.128
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2449
+        Internal_Power: 1.9325
+        Switching_Power: 0.438
+        Leakage_Power: 1689300.0
+        Total_Power: 4.0598
+        Param_Domains:
+          __main__: 8lsb
+          __timestamp__: 2026-06-15_14-48-15
+      9lsb:
+        Fmax: 1413
+        Cell_Area: 3528.336
+        Total_Area: null
+        Comb_Area: 2939.328
+        Noncomb_Area: 589.008
+        Buf_Inv_Area: 145.824
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2509
+        Internal_Power: 2.0819
+        Switching_Power: 0.3982
+        Leakage_Power: 1649000.0
+        Total_Power: 4.1291
+        Param_Domains:
+          __main__: 9lsb
+          __timestamp__: 2026-06-15_14-48-15
+custom_freq_synthesis: {}

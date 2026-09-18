@@ -1,0 +1,2 @@
+accumWidth = 15,
+    phaseOutWidth = 12,

@@ -1,0 +1,274 @@
+units:
+  Fmax: MHz
+  Cell_Area: um^2
+  Comb_Area: um^2
+  Noncomb_Area: um^2
+  Buf_Inv_Area: um^2
+  Macro_Area: um^2
+  Internal_Power: mW
+  Switching_Power: mW
+  Leakage_Power: pW
+  Total_Power: mW
+fmax_synthesis:
+  TSMC_N28_HPCplus_P140_12T_0V8:
+    EightWave:
+      10Bits:
+        Fmax: 3691
+        Cell_Area: 690.312
+        Total_Area: null
+        Comb_Area: 533.568
+        Noncomb_Area: 156.744
+        Buf_Inv_Area: 78.624
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 672
+        Internal_Power: 0.9414
+        Switching_Power: 0.1752
+        Leakage_Power: 197960.0
+        Total_Power: 1.3146
+        Param_Domains:
+          __main__: 10Bits
+          __timestamp__: 2026-06-09_16-48-19
+      12Bits:
+        Fmax: 3066
+        Cell_Area: 1393.896
+        Total_Area: null
+        Comb_Area: 1218.504
+        Noncomb_Area: 175.392
+        Buf_Inv_Area: 215.208
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 1382
+        Internal_Power: 1.106
+        Switching_Power: 0.323
+        Leakage_Power: 430390.0
+        Total_Power: 1.8594
+        Param_Domains:
+          __main__: 12Bits
+          __timestamp__: 2026-06-09_16-48-19
+      14Bits:
+        Fmax: 2750
+        Cell_Area: 2541.672
+        Total_Area: null
+        Comb_Area: 2345.112
+        Noncomb_Area: 196.56
+        Buf_Inv_Area: 377.832
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2887
+        Internal_Power: 1.2196
+        Switching_Power: 0.525
+        Leakage_Power: 702200.0
+        Total_Power: 2.4468
+        Param_Domains:
+          __main__: 14Bits
+          __timestamp__: 2026-06-09_16-48-19
+      16Bits:
+        Fmax: 2507
+        Cell_Area: 3192.84
+        Total_Area: null
+        Comb_Area: 2993.256
+        Noncomb_Area: 199.584
+        Buf_Inv_Area: 504.672
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3434
+        Internal_Power: 1.2942
+        Switching_Power: 0.6047
+        Leakage_Power: 921280.0
+        Total_Power: 2.8202
+        Param_Domains:
+          __main__: 16Bits
+          __timestamp__: 2026-06-09_16-48-19
+      8Bits:
+        Fmax: 5223
+        Cell_Area: 408.072
+        Total_Area: null
+        Comb_Area: 258.384
+        Noncomb_Area: 149.688
+        Buf_Inv_Area: 47.88
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 330
+        Internal_Power: 1.1714
+        Switching_Power: 0.1541
+        Leakage_Power: 114670.0
+        Total_Power: 1.4401
+        Param_Domains:
+          __main__: 8Bits
+          __timestamp__: 2026-06-09_16-48-19
+  TSMC_N28_HPCplus_P140_12T_0V9:
+    EightWave:
+      10Bits:
+        Fmax: 3867
+        Cell_Area: 668.304
+        Total_Area: null
+        Comb_Area: 506.016
+        Noncomb_Area: 162.288
+        Buf_Inv_Area: 83.16
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 643
+        Internal_Power: 1.284
+        Switching_Power: 0.2277
+        Leakage_Power: 244660.0
+        Total_Power: 1.7563
+        Param_Domains:
+          __main__: 10Bits
+          __timestamp__: 2026-06-09_16-48-19
+      12Bits:
+        Fmax: 3257
+        Cell_Area: 1252.944
+        Total_Area: null
+        Comb_Area: 1072.512
+        Noncomb_Area: 180.432
+        Buf_Inv_Area: 167.832
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 1334
+        Internal_Power: 1.3478
+        Switching_Power: 0.3836
+        Leakage_Power: 461740.0
+        Total_Power: 2.1931
+        Param_Domains:
+          __main__: 12Bits
+          __timestamp__: 2026-06-09_16-48-19
+      14Bits:
+        Fmax: 2850
+        Cell_Area: 2406.6
+        Total_Area: null
+        Comb_Area: 2207.016
+        Noncomb_Area: 199.584
+        Buf_Inv_Area: 377.664
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2566
+        Internal_Power: 1.6385
+        Switching_Power: 0.7119
+        Leakage_Power: 912390.0
+        Total_Power: 3.2628
+        Param_Domains:
+          __main__: 14Bits
+          __timestamp__: 2026-06-09_16-48-19
+      16Bits:
+        Fmax: 2674
+        Cell_Area: 3253.824
+        Total_Area: null
+        Comb_Area: 3039.12
+        Noncomb_Area: 214.704
+        Buf_Inv_Area: 487.032
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3675
+        Internal_Power: 1.8057
+        Switching_Power: 0.8479
+        Leakage_Power: 1194000.0
+        Total_Power: 3.8476
+        Param_Domains:
+          __main__: 16Bits
+          __timestamp__: 2026-06-09_16-48-19
+      8Bits:
+        Fmax: 5072
+        Cell_Area: 384.048
+        Total_Area: null
+        Comb_Area: 238.896
+        Noncomb_Area: 145.152
+        Buf_Inv_Area: 42.168
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 310
+        Internal_Power: 1.412
+        Switching_Power: 0.1826
+        Leakage_Power: 132460.0
+        Total_Power: 1.727
+        Param_Domains:
+          __main__: 8Bits
+          __timestamp__: 2026-06-09_16-48-19
+  TSMC_N28_HPCplus_P140_12T_1V0:
+    EightWave:
+      10Bits:
+        Fmax: 3937
+        Cell_Area: 697.032
+        Total_Area: null
+        Comb_Area: 544.824
+        Noncomb_Area: 152.208
+        Buf_Inv_Area: 87.192
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 660
+        Internal_Power: 1.6339
+        Switching_Power: 0.3236
+        Leakage_Power: 355410.0
+        Total_Power: 2.313
+        Param_Domains:
+          __main__: 10Bits
+          __timestamp__: 2026-06-09_16-48-19
+      12Bits:
+        Fmax: 3396
+        Cell_Area: 1238.496
+        Total_Area: null
+        Comb_Area: 1056.048
+        Noncomb_Area: 182.448
+        Buf_Inv_Area: 154.224
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 1327
+        Internal_Power: 1.7716
+        Switching_Power: 0.5112
+        Leakage_Power: 599040.0
+        Total_Power: 2.8818
+        Param_Domains:
+          __main__: 12Bits
+          __timestamp__: 2026-06-09_16-48-19
+      14Bits:
+        Fmax: 2986
+        Cell_Area: 2438.016
+        Total_Area: null
+        Comb_Area: 2243.808
+        Noncomb_Area: 194.208
+        Buf_Inv_Area: 382.872
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 2696
+        Internal_Power: 2.1168
+        Switching_Power: 0.9529
+        Leakage_Power: 1193400.0
+        Total_Power: 4.2632
+        Param_Domains:
+          __main__: 14Bits
+          __timestamp__: 2026-06-09_16-48-19
+      16Bits:
+        Fmax: 2980
+        Cell_Area: 3428.376
+        Total_Area: null
+        Comb_Area: 3210.648
+        Noncomb_Area: 217.728
+        Buf_Inv_Area: 525.504
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 3772
+        Internal_Power: 2.6012
+        Switching_Power: 1.2809
+        Leakage_Power: 1660900.0
+        Total_Power: 5.543
+        Param_Domains:
+          __main__: 16Bits
+          __timestamp__: 2026-06-09_16-48-19
+      8Bits:
+        Fmax: 4910
+        Cell_Area: 361.2
+        Total_Area: null
+        Comb_Area: 223.608
+        Noncomb_Area: 137.592
+        Buf_Inv_Area: 37.632
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 309
+        Internal_Power: 1.7085
+        Switching_Power: 0.2
+        Leakage_Power: 160620.0
+        Total_Power: 2.0692
+        Param_Domains:
+          __main__: 8Bits
+          __timestamp__: 2026-06-09_16-48-19
+custom_freq_synthesis: {}

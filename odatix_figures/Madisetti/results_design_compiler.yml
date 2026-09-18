@@ -1,0 +1,70 @@
+units:
+  Fmax: MHz
+  Cell_Area: um^2
+  Comb_Area: um^2
+  Noncomb_Area: um^2
+  Buf_Inv_Area: um^2
+  Macro_Area: um^2
+  Internal_Power: mW
+  Switching_Power: mW
+  Leakage_Power: pW
+  Total_Power: mW
+fmax_synthesis:
+  TSMC_N28_HPCplus_P140_12T_0V8:
+    Madisetti_36_22:
+      Madisetti_36_22:
+        Fmax: 2264
+        Cell_Area: 7046.928
+        Total_Area: null
+        Comb_Area: 4831.176
+        Noncomb_Area: 2215.752
+        Buf_Inv_Area: 587.328
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 6478
+        Internal_Power: 11.2304
+        Switching_Power: 2.2153
+        Leakage_Power: 2391800.0
+        Total_Power: 15.8375
+        Param_Domains:
+          __main__: Madisetti_36_22
+          __timestamp__: 2026-07-01_16-02-08
+  TSMC_N28_HPCplus_P140_12T_0V9:
+    Madisetti_36_22:
+      Madisetti_36_22:
+        Fmax: 2555
+        Cell_Area: 7189.224
+        Total_Area: null
+        Comb_Area: 4918.2
+        Noncomb_Area: 2271.024
+        Buf_Inv_Area: 575.568
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 6498
+        Internal_Power: 17.0948
+        Switching_Power: 3.4377
+        Leakage_Power: 3269600.0
+        Total_Power: 23.8021
+        Param_Domains:
+          __main__: Madisetti_36_22
+          __timestamp__: 2026-07-01_16-02-08
+  TSMC_N28_HPCplus_P140_12T_1V0:
+    Madisetti_36_22:
+      Madisetti_36_22:
+        Fmax: 2766
+        Cell_Area: 6795.768
+        Total_Area: null
+        Comb_Area: 4760.616
+        Noncomb_Area: 2035.152
+        Buf_Inv_Area: 573.888
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 6434
+        Internal_Power: 21.0242
+        Switching_Power: 4.4196
+        Leakage_Power: 3947400.0
+        Total_Power: 29.3911
+        Param_Domains:
+          __main__: Madisetti_36_22
+          __timestamp__: 2026-07-01_16-02-08
+custom_freq_synthesis: {}

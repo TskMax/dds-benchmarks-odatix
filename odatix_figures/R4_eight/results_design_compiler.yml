@@ -1,0 +1,83 @@
+units:
+  Fmax: MHz
+  Cell_Area: um^2
+  Comb_Area: um^2
+  Noncomb_Area: um^2
+  Buf_Inv_Area: um^2
+  Macro_Area: um^2
+  Internal_Power: mW
+  Switching_Power: mW
+  Leakage_Power: pW
+  Total_Power: mW
+fmax_synthesis:
+  TSMC_N28_HPCplus_P140_12T_0V9:
+    EightR4:
+      '3334':
+        Fmax: 806
+        Cell_Area: 21007.224
+        Total_Area: null
+        Comb_Area: 19898.256
+        Noncomb_Area: 1108.968
+        Buf_Inv_Area: 569.352
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 12373
+        Internal_Power: 3.5143
+        Switching_Power: 1.0502
+        Leakage_Power: 11407000.0
+        Total_Power: 15.9712
+        Param_Domains:
+          __main__: '3334'
+          __timestamp__: 2026-06-15_16-34-50
+      '3343':
+        Fmax: 796
+        Cell_Area: 20418.888
+        Total_Area: null
+        Comb_Area: 19347.384
+        Noncomb_Area: 1071.504
+        Buf_Inv_Area: 572.88
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 12223
+        Internal_Power: 3.2926
+        Switching_Power: 0.995
+        Leakage_Power: 10843000.0
+        Total_Power: 15.1306
+        Param_Domains:
+          __main__: '3343'
+          __timestamp__: 2026-06-15_16-34-50
+      '3433':
+        Fmax: 804
+        Cell_Area: 20799.576
+        Total_Area: null
+        Comb_Area: 19711.608
+        Noncomb_Area: 1087.968
+        Buf_Inv_Area: 587.496
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 12677
+        Internal_Power: 3.3105
+        Switching_Power: 0.984
+        Leakage_Power: 11279000.0
+        Total_Power: 15.5734
+        Param_Domains:
+          __main__: '3433'
+          __timestamp__: 2026-06-15_16-34-50
+      '4333':
+        Fmax: 801
+        Cell_Area: 20352.192
+        Total_Area: null
+        Comb_Area: 19270.608
+        Noncomb_Area: 1081.584
+        Buf_Inv_Area: 481.152
+        Macro_Area: 0.0
+        Net_Area: null
+        Cell_count: 12381
+        Internal_Power: 3.3162
+        Switching_Power: 0.9873
+        Leakage_Power: 10894000.0
+        Total_Power: 15.197
+        Param_Domains:
+          __main__: '4333'
+          __timestamp__: 2026-06-15_16-34-50
+custom_freq_synthesis: {}
